@@ -1,5 +1,13 @@
+/* eslint-disable global-require */
+/* eslint-disable import/no-dynamic-require */
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config();
+  process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
+}
+
+const fs = require('fs');
+const path = require('path');
 const express = require('express');
-const config = require('config');
 const https = require('https');
 const pino = require('express-pino-logger');
 const swaggerUi = require('swagger-ui-express');
@@ -9,10 +17,11 @@ const routes = require('./components/routes');
 const logger = require('./utils/logger');
 const WebSocketServer = require('./ws.server');
 
+
 /**
  * Config
  */
-const SERVER_PORT = config.get('SERVER.PORT');
+const { SERVER_PORT } = process.env;
 const API_BASE = '/api/v1';
 
 /**
