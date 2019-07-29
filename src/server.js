@@ -42,7 +42,10 @@ app.use(API_BASE, routes());
 // Swagger for documenting the api, access through localhost:xxxx/api-docs.
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
-const server = https.createServer(app);
+const server = https.createServer({
+  key: fs.readFileSync(path.resolve(process.cwd(), 'server.key')),
+  cert: fs.readFileSync(path.resolve(process.cwd(), 'server.cert')),
+}, app);
 
 /**
  * Create WebSocket server
