@@ -38,7 +38,7 @@ const server = https.createServer(app);
 /**
  * Create WebSocket server
  */
-const webSocketServer = new WebSocketServer(server, `${API_BASE}/ws`);
+// const webSocketServer = new WebSocketServer(server, `${API_BASE}/ws`);
 
 /**
  * Start
@@ -47,7 +47,7 @@ const webSocketServer = new WebSocketServer(server, `${API_BASE}/ws`);
 // Listen on port specfied in env-file.
 server.listen({ port: SERVER_PORT }, async () => {
   logger.info(`Server started on port ${SERVER_PORT}`);
-  webSocketServer.start();
+  // webSocketServer.start();
 });
 
 // Export server to use it in tests.
