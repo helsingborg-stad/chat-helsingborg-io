@@ -1,5 +1,5 @@
 {
-  "name": "helsingborg-io-boilerplate",
+  "name": "chat-helsingborg-io",
   "version": "0.0.1",
   "description": "Boilerplate repository for nodejs based LABS projects.",
   "main": "server.js",
