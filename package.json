@@ -26,7 +26,7 @@
     "pino-colada": "^1.4.4"
   },
   "dependencies": {
-    "@hapi/joi": "^15.0.1",
+    "@hapi/joi": "^15.1.1",
     "axios": "^0.18.0",
     "body-parser": "^1.19.0",
     "config": "^3.1.0",
